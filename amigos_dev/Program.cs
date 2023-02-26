@@ -1,9 +1,16 @@
+using amigos_dev.Infrastructure;
 using amigos_dev.Infrastructure.InversionOfControl;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<FDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FriendDB"));
+});
 
 DependencyInjection.Inject(builder.Services, builder.Configuration);
 

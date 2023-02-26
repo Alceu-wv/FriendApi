@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UgQr5kDDReujG5KNlhcFtNsatp1VMopH9jbn3JhFLlvQY+F//go1PpLD/GzQymtHw0ey9/2f+LbSSi3oUbeS8Q==",
+  "dgSpecHash": "wRP2t/218Fsa/atij7CAXnqwHT9aaNfsDd+gov946Ub01rRf9hWL0xt1qP4bUuqy91HqaVCXXrVtcaowZwoOKA==",
   "success": true,
   "projectFilePath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Infrastructure\\amigos_dev.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.4\\microsoft.entityframeworkcore.design.6.0.4.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.4\\microsoft.entityframeworkcore.relational.6.0.4.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.4\\microsoft.entityframeworkcore.sqlserver.6.0.4.nupkg.sha512",
+    "C:\\Users\\alceu\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.4\\microsoft.entityframeworkcore.tools.6.0.4.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

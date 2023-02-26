@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.4",
           "Microsoft.EntityFrameworkCore.Design": "6.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.4",
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.4",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "System.Configuration.ConfigurationManager": "6.0.1",
           "amigos_dev.Application": "1.0.0",
@@ -167,6 +168,11 @@
             "assemblyVersion": "6.0.4.0",
             "fileVersion": "6.0.422.16106"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/6.0.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "6.0.4"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
@@ -672,6 +678,13 @@
       "sha512": "sha512-rMJcVbMxrXmufywA1wYUMqLuxS7PvoPVxR8juUGwJcBdQ31rKyDBxII3i5B2JrgSgWXGiy8V7n9acxKRTX03fw==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.4",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/6.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6uAir6kFgkZoM2xsmNxs3WhK03xN37u4fW44X8cAXzllkG4txMajbkYhT0jSh4D+YrnfdNCq3K8ol3MyCCGEug==",
+      "path": "microsoft.entityframeworkcore.tools/6.0.4",
+      "hashPath": "microsoft.entityframeworkcore.tools.6.0.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",
