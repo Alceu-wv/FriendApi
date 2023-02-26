@@ -1,0 +1,15 @@
+C:\code\dotnet\amigos_dev\amigos_dev.Application\bin\Debug\net6.0\amigos_dev.Application.deps.json
+C:\code\dotnet\amigos_dev\amigos_dev.Application\bin\Debug\net6.0\amigos_dev.Application.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Application\bin\Debug\net6.0\amigos_dev.Application.pdb
+C:\code\dotnet\amigos_dev\amigos_dev.Application\bin\Debug\net6.0\amigos_dev.Domain.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Application\bin\Debug\net6.0\amigos_dev.Domain.pdb
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.csproj.AssemblyReference.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.AssemblyInfoInputs.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.AssemblyInfo.cs
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.csproj.CoreCompileInputs.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.csproj.CopyComplete
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\refint\amigos_dev.Application.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\amigos_dev.Application.pdb
+C:\code\dotnet\amigos_dev\amigos_dev.Application\obj\Debug\net6.0\ref\amigos_dev.Application.dll
