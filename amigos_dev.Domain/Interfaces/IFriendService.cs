@@ -11,5 +11,6 @@ namespace amigos_dev.Domain.Interfaces
     public interface IFriendService
     {
         public List<Friend> GetAll();
+        void Create(Friend friend);
     }
 }

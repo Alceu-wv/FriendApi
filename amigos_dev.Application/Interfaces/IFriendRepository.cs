@@ -10,5 +10,6 @@ namespace amigos_dev.Application.Interfaces
     public interface IFriendRepository
     {
         List<Friend> GetAll();
+        void Create(Friend friend);
     }
 }

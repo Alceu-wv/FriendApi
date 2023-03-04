@@ -1,0 +1,36 @@
+﻿@using amigos_dev.Domain.Entities;
+
+@model IEnumerable<Friend>
+
+@{
+    ViewData["Title"] = "Amigos";
+}
+
+<h1>Amigos</h1>
+<p>Selecione os amigos que deseja enviar:</p>
+<form asp-controller="Friend" asp-action="SendSelected" method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Tipo de Amigo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var friend in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selectedFriends" value="@friend.Id" />
+                    </td>
+                    <td>@friend.Name</td>
+                    <td>@friend.Email</td>
+                    <td>@friend.FriendType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Enviar selecionados</button>
+</form>

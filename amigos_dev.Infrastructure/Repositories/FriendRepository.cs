@@ -15,6 +15,12 @@ namespace amigos_dev.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
+
+        public void Create(Friend friend)
+        {
+            _dbContext.Add(friend);
+        }
+
         public List<Friend> GetAll()
         {
             return _dbContext.Friend.ToList();

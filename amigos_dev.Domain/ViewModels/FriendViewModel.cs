@@ -16,7 +16,6 @@ namespace amigos_dev.Domain.ViewModels
 
         public string FriendType { get; set; }
 
-
         public FriendViewModel(Friend friend)
         {
             this.Id = friend.Id;
