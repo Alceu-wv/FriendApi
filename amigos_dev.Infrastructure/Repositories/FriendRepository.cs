@@ -16,6 +16,11 @@ namespace amigos_dev.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
+        public Friend GetById(int id)
+        {
+            return _dbContext.Friend.Find(id);
+        }
+
         public void Create(Friend friend)
         {
             _dbContext.Friend.Add(friend);

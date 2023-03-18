@@ -16,6 +16,11 @@ namespace amigos_dev.Infrastructure.Services
 
         public FriendService(IFriendRepository friendRepository) { _friendRepository = friendRepository; }
 
+        public Friend GetById(int id)
+        {
+            return _friendRepository.GetById(id);
+        }
+
         public void Create(Friend friend)
         {
             _friendRepository.Create(friend);

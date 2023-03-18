@@ -5,6 +5,7 @@ namespace amigos_dev.Domain.Interfaces
 {
     public interface IFriendService
     {
+        Friend GetById(int id);
         public List<Friend> GetAll();
         void Create(Friend friend);
         void Delete(int id);

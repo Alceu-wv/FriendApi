@@ -9,6 +9,7 @@ namespace amigos_dev.Application.Interfaces
 {
     public interface IFriendRepository
     {
+        Friend GetById(int id);
         List<Friend> GetAll();
         void Create(Friend friend);
         void Delete(int id);

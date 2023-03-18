@@ -31,85 +31,87 @@ namespace amigos_dev.API.Controllers
             _service = service;
         }
 
+        [HttpPost("CreateFriend")]
+        public IActionResult Create(Friend viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Friend friend = new()
+                    {
+                        Name = viewModel.Name,
+                        Email = viewModel.Email,
+                        Birthday = viewModel.Birthday,
+                        FriendType = viewModel.FriendType
+                    };
+
+                    _service.Create(friend);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Erro ao criar amigo: {ex.Message}");
+                }
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
 
         // GET: APIFriendController
-        [HttpGet]
+        [HttpGet("GetFriends")]
         public async Task<List<Friend>> GetFriends()
         {
             List<Friend> friends = _service.GetAll().ToList();
             return friends;
         }
 
+        [HttpPost("DeleteFriend")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                _service.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Erro ao excluir amigo: {ex.Message}");
+            }
+        }
+
+        [HttpPost("EditFriend")]
+        public IActionResult Edit(FriendViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    Friend friend = new()
+                    {
+                        Id = viewModel.Id,
+                        Name = viewModel.Name,
+                        Email = viewModel.Email,
+                        Birthday = viewModel.Birthday,
+                        FriendType = viewModel.FriendType
+                    };
+
+                    _service.Update(friend);
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Erro ao atualizar amigo: {ex.Message}");
+                }
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
     }
 }
 
-/*
-// GET: APIFriendController/Details/5
-public ActionResult Details(int id)
-{
-    return View();
-}
-
-// GET: APIFriendController/Create
-public ActionResult Create()
-{
-    return View();
-}
-
-// POST: APIFriendController/Create
-[HttpPost]
-[ValidateAntiForgeryToken]
-public ActionResult Create(IFormCollection collection)
-{
-    try
-    {
-        return RedirectToAction(nameof(Index));
-    }
-    catch
-    {
-        return View();
-    }
-}
-
-// GET: APIFriendController/Edit/5
-public ActionResult Edit(int id)
-{
-    return View();
-}
-
-// POST: APIFriendController/Edit/5
-[HttpPost]
-[ValidateAntiForgeryToken]
-public ActionResult Edit(int id, IFormCollection collection)
-{
-    try
-    {
-        return RedirectToAction(nameof(Index));
-    }
-    catch
-    {
-        return View();
-    }
-}
-
-// GET: APIFriendController/Delete/5
-public ActionResult Delete(int id)
-{
-    return View();
-}
-
-// POST: APIFriendController/Delete/5
-[HttpPost]
-[ValidateAntiForgeryToken]
-public ActionResult Delete(int id, IFormCollection collection)
-{
-    try
-    {
-        return RedirectToAction(nameof(Index));
-    }
-    catch
-    {
-        return View();
-    }
-}
-*/

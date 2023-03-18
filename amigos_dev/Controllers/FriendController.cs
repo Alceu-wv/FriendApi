@@ -14,15 +14,24 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Text;
+using System;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+using JsonSerializer = System.Text.Json.JsonSerializer;
+using amigos_dev.Application.Interfaces;
 
 namespace amigos_dev.Controllers
 {
     public class FriendController : Controller
     {
         private readonly IFriendService _service;
+        private readonly HttpClient _client;
         public FriendController(IFriendService service)
         {
             _service = service;
+            _client = new HttpClient();
+            _client.BaseAddress = new Uri("https://localhost:7122/APIFriend");
         }
 
         private void SetSession(List<int> selected)
@@ -56,7 +65,7 @@ namespace amigos_dev.Controllers
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TESTE");
-                using (var response = await client.GetAsync("https://localhost:7122/APIFriend"))
+                using (var response = await client.GetAsync("https://localhost:7122/APIFriend/GetFriends"))
                 {
                     if (response.StatusCode == HttpStatusCode.Unauthorized)
                     {
@@ -76,6 +85,13 @@ namespace amigos_dev.Controllers
             
             return View(friendsProximos);
         }
+
+        public IActionResult SelectFriend(List<int> selected)
+        {
+            SetSession(selected);
+            return RedirectToAction("Index", "Home");
+        }
+
 
         [HttpPost]
         public IActionResult Create(Friend viewModel)
@@ -99,18 +115,58 @@ namespace amigos_dev.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _service.Delete(id);
-            return RedirectToAction("Index", "Home");
+            var response = await _client.DeleteAsync($"api/friends/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                var error = JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
+                return StatusCode((int)response.StatusCode, error);
+            }
         }
 
-        public IActionResult SelectFriend(List<int> selected)
+        [HttpPost]
+        public async Task<IActionResult> Edit(Friend viewModel)
         {
-            //TODO: configurar o session da aplicação
-            SetSession(selected);
-            return RedirectToAction("Index", "Home");
+            if (ModelState.IsValid)
+            {
+                var json = JsonConvert.SerializeObject(viewModel);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync($"api/friends/{viewModel.Id}", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    var error = JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
+                    return StatusCode((int)response.StatusCode, error);
+                }
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
         }
+
+        public IActionResult EditView(int id)
+        {
+            var friend = _service.GetById(id);
+
+            if (friend == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new FriendViewModel(friend);
+
+            return View(viewModel);
+        }
+
     }
 }
 
