@@ -77,49 +77,6 @@ namespace amigos_dev.Controllers
             return View(friendsProximos);
         }
 
-        public async Task<IActionResult> FriendsDistantesAsync()
-        {
-            List<FriendViewModel> FriendsDistantes = new();
-            List<int> selected = GetSelected();
-
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TESTE");
-                using (var response = await client.GetAsync("https://localhost:7122/APIFriend"))
-                {
-                    if (response.StatusCode == HttpStatusCode.Unauthorized)
-                    {
-                        return RedirectToAction("Erro401", "Home");
-                    }
-                    string apiResponse = await response.Content.ReadAsStringAsync();
-                    var friends = JsonConvert.DeserializeObject<List<Friend>>(apiResponse);
-                    FriendsDistantes = FriendViewModel.GetAll(friends);
-                }
-            }
-
-
-            foreach (var friend in FriendsDistantes)
-            {
-                friend.Selected = selected.Contains(friend.Id);
-            }
-
-            return View(FriendsDistantes);
-        }
-        /*
-        {
-            List<int> selected = GetSelected();
-
-            List<FriendViewModel> friendsDistantes = _service.GetAllViewModel().ToList();
-            
-            foreach (var friend in friendsDistantes)
-            {
-                friend.Selected = selected.Contains(friend.Id);
-            }
-
-            return View(friendsDistantes);
-        }
-        */
-
         [HttpPost]
         public IActionResult Create(Friend viewModel)
         {

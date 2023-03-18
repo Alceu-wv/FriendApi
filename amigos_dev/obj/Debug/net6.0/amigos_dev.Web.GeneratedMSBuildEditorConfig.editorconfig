@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\code\dotnet\amigos_dev\amigos_dev
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/code/dotnet/amigos_dev/amigos_dev/Views/Friend/FriendsDistantes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kXEZyaWVuZHNEaXN0YW50ZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/code/dotnet/amigos_dev/amigos_dev/Views/Friend/FriendsProximos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnJpZW5kXEZyaWVuZHNQcm94aW1vcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
