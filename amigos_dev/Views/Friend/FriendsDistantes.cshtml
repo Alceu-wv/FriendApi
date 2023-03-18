@@ -1,14 +1,14 @@
-﻿@using amigos_dev.Domain.Entities;
+﻿@using amigos_dev.Domain.ViewModels;
 
-@model IEnumerable<Friend>
+@model IEnumerable<FriendViewModel>
 
 @{
     ViewData["Title"] = "Amigos";
 }
 
 <h1>Amigos</h1>
-<p>Selecione os amigos que deseja enviar:</p>
-<form asp-controller="Friend" asp-action="SendSelected" method="post">
+<p>Selecione seus amigos:</p>
+<form asp-controller="Friend" asp-action="SelectFriend" method="post">
     <table class="table">
         <thead>
             <tr>
@@ -23,7 +23,7 @@
             {
                 <tr>
                     <td>
-                        <input type="checkbox" name="selectedFriends" value="@friend.Id" />
+                        <input type="checkbox" name="selected" value="@friend.Id" checked="@friend.Selected" />
                     </td>
                     <td>@friend.Name</td>
                     <td>@friend.Email</td>
@@ -32,5 +32,5 @@
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-primary">Enviar selecionados</button>
+    <button type="submit" class="btn btn-primary">Persistir Seleção</button>
 </form>

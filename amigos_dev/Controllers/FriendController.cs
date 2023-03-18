@@ -2,6 +2,8 @@
 using amigos_dev.Domain.Interfaces;
 using amigos_dev.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Newtonsoft.Json;
 
 namespace amigos_dev.Controllers
 {
@@ -12,6 +14,25 @@ namespace amigos_dev.Controllers
         {
             _service = service;
         }
+
+        private void SetSession(List<int> selected)
+        {
+
+            var selectedFriends = JsonConvert.SerializeObject(selected);
+            HttpContext.Session.SetString("selectedFriends", selectedFriends);
+        }
+
+        private List<int> GetSelected()
+        {
+            var selectedFriends = HttpContext.Session.GetString("selectedFriends");
+
+            if (string.IsNullOrEmpty(selectedFriends))
+            {
+                return new List<int>();
+            }
+            return JsonConvert.DeserializeObject<List<int>>(selectedFriends);
+        }
+
         public IActionResult Index()
         {
             return Ok(_service.GetAll());
@@ -19,13 +40,29 @@ namespace amigos_dev.Controllers
 
         public IActionResult FriendsProximos()
         {
-            List<Friend> friendsProximos = _service.GetAll().ToList();
+            List<int> selected = GetSelected();
+
+            List<FriendViewModel> friendsProximos = _service.GetAllViewModel().ToList();
+
+            foreach (var friend in friendsProximos)
+            {
+                friend.Selected = selected.Contains(friend.Id);
+            }
+            
             return View(friendsProximos);
         }
 
         public IActionResult FriendsDistantes()
         {
-            List<Friend> friendsDistantes = _service.GetAll().ToList();
+            List<int> selected = GetSelected();
+
+            List<FriendViewModel> friendsDistantes = _service.GetAllViewModel().ToList();
+            
+            foreach (var friend in friendsDistantes)
+            {
+                friend.Selected = selected.Contains(friend.Id);
+            }
+
             return View(friendsDistantes);
         }
 
@@ -47,6 +84,13 @@ namespace amigos_dev.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult SelectFriend(List<int> selected)
+        {
+            //TODO: configurar o session da aplicação
+            SetSession(selected);
             return RedirectToAction("Index", "Home");
         }
     }

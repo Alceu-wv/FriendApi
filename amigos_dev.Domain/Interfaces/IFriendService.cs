@@ -12,5 +12,7 @@ namespace amigos_dev.Domain.Interfaces
     {
         public List<Friend> GetAll();
         void Create(Friend friend);
+
+        public List<FriendViewModel> GetAllViewModel();
     }
 }

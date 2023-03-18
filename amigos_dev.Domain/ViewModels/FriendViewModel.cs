@@ -13,8 +13,8 @@ namespace amigos_dev.Domain.ViewModels
         public string Name { get; set; }
         public string? Email { get; set; }
         public DateTime? Birthday { get; set; }
-
         public string FriendType { get; set; }
+        public bool Selected { get; set; }
 
         public FriendViewModel(Friend friend)
         {
@@ -23,6 +23,7 @@ namespace amigos_dev.Domain.ViewModels
             this.Email = friend.Email;
             this.Birthday = friend.Birthday;
             this.FriendType = friend.FriendType;
+            this.Selected = false;
         }
 
         public static List<FriendViewModel> GetAll(List<Friend> friends)

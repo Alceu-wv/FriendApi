@@ -25,5 +25,10 @@ namespace amigos_dev.Infrastructure.Services
         {
             return _friendRepository.GetAll();
         }
+
+        List<FriendViewModel> IFriendService.GetAllViewModel()
+        {
+            return FriendViewModel.GetAll(this.GetAll());
+        }
     }
 }

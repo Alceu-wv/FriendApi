@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1LkKbOsdnb0ucLdPHL4UUvhWepY+1QVrZxxRced3rSSuLZeVuNCmlXLLRXFPbdx3ZiSLgyGnYGgm+6GIfeBlpg==",
+  "dgSpecHash": "ZI14qirQjeri0J+Nv7KKdS7cXHJi19uqCefBgMe2PJa4tudz9Q9f8zJ1MAeZNdkrcsTRRCEZBRhSlQ2feMvxrg==",
   "success": true,
   "projectFilePath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev\\amigos_dev.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\alceu\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

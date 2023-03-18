@@ -95,3 +95,4 @@ C:\code\dotnet\amigos_dev\amigos_dev\obj\Debug\net6.0\refint\amigos_dev.dll
 C:\code\dotnet\amigos_dev\amigos_dev\obj\Debug\net6.0\amigos_dev.pdb
 C:\code\dotnet\amigos_dev\amigos_dev\obj\Debug\net6.0\amigos_dev.genruntimeconfig.cache
 C:\code\dotnet\amigos_dev\amigos_dev\obj\Debug\net6.0\ref\amigos_dev.dll
+C:\code\dotnet\amigos_dev\amigos_dev\bin\Debug\net6.0\Newtonsoft.Json.dll
