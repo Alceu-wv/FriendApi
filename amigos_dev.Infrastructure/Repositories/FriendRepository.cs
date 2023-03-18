@@ -26,5 +26,21 @@ namespace amigos_dev.Infrastructure.Repositories
         {
             return _dbContext.Friend.ToList();
         }
+
+        public void Delete(int id)
+        {
+            var friend = _dbContext.Friend.Find(id);
+            if (friend != null)
+            {
+                _dbContext.Friend.Remove(friend);
+                _dbContext.SaveChanges();
+            }
+        }
+
+        public void Update(Friend friend)
+        {
+            _dbContext.Friend.Update(friend);
+            _dbContext.SaveChanges();
+        }
     }
 }

@@ -98,6 +98,13 @@ namespace amigos_dev.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            _service.Delete(id);
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult SelectFriend(List<int> selected)
         {
             //TODO: configurar o session da aplicação
@@ -106,3 +113,4 @@ namespace amigos_dev.Controllers
         }
     }
 }
+

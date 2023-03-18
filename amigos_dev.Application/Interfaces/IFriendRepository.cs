@@ -11,5 +11,7 @@ namespace amigos_dev.Application.Interfaces
     {
         List<Friend> GetAll();
         void Create(Friend friend);
+        void Delete(int id);
+        void Update(Friend friend);
     }
 }

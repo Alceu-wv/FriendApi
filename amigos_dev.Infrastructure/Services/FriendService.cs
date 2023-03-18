@@ -30,5 +30,15 @@ namespace amigos_dev.Infrastructure.Services
         {
             return FriendViewModel.GetAll(this.GetAll());
         }
+
+        public void Delete(int id)
+        {
+            _friendRepository.Delete(id);
+        }
+
+        public void Update(Friend friend)
+        {
+            _friendRepository.Update(friend);
+        }
     }
 }

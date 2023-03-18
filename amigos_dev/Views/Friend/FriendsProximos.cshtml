@@ -15,6 +15,8 @@
                 <th></th>
                 <th>Nome</th>
                 <th>Data de Aniversário</th>
+                <th>Tipo de Amigo</th>
+                <th>Opções</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +29,10 @@
                     <td>@friend.Name</td>
                     <td>@friend.Birthday</td>
                     <td>@friend.FriendType</td>
+                    <td>
+                        <a asp-controller="Friend" asp-action="Edit" asp-route-id="@friend.Id">Editar</a> |
+                        <a asp-controller="Friend" asp-action="Delete" asp-route-id="@friend.Id">Deletar</a>
+                    </td>
                 </tr>
             }
         </tbody>
