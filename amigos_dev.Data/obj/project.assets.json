@@ -3926,9 +3926,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Data.csproj",
-      "projectName": "amigos_dev.Data",
-      "projectPath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Data.csproj",
+      "projectUniqueName": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Api.csproj",
+      "projectName": "amigos_dev.Api",
+      "projectPath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Api.csproj",
       "packagesPath": "C:\\Users\\alceu\\.nuget\\packages\\",
       "outputPath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\obj\\",
       "projectStyle": "PackageReference",

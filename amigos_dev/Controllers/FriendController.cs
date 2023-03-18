@@ -2,8 +2,18 @@
 using amigos_dev.Domain.Interfaces;
 using amigos_dev.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json.Linq;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
+using System.Security.Claims;
+using System.Text;
 
 namespace amigos_dev.Controllers
 {
@@ -38,11 +48,27 @@ namespace amigos_dev.Controllers
             return Ok(_service.GetAll());
         }
 
-        public IActionResult FriendsProximos()
+        public async Task<IActionResult> FriendsProximosAsync()
         {
+            List<FriendViewModel> friendsProximos = new();
             List<int> selected = GetSelected();
 
-            List<FriendViewModel> friendsProximos = _service.GetAllViewModel().ToList();
+            //List<FriendViewModel> friendsProximos = _service.GetAllViewModel().ToList();
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "TESTE");
+                using (var response = await client.GetAsync("https://localhost:7122/APIFriend"))
+                {
+                    if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        return RedirectToAction("Erro401", "Home");
+                    }
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    var friends = JsonConvert.DeserializeObject<List<Friend>>(apiResponse);
+                    friendsProximos = FriendViewModel.GetAll(friends);
+                }
+            }
+
 
             foreach (var friend in friendsProximos)
             {

@@ -1,0 +1,14 @@
+C:\code\dotnet\amigos_dev\amigos_dev.Data\bin\Debug\net6.0\amigos_dev.Api.deps.json
+C:\code\dotnet\amigos_dev\amigos_dev.Data\bin\Debug\net6.0\amigos_dev.Api.runtimeconfig.json
+C:\code\dotnet\amigos_dev\amigos_dev.Data\bin\Debug\net6.0\amigos_dev.Api.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Data\bin\Debug\net6.0\amigos_dev.Api.pdb
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.csproj.AssemblyReference.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.AssemblyInfoInputs.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.AssemblyInfo.cs
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.csproj.CoreCompileInputs.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\refint\amigos_dev.Api.dll
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.pdb
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\amigos_dev.Api.genruntimeconfig.cache
+C:\code\dotnet\amigos_dev\amigos_dev.Data\obj\Debug\net6.0\ref\amigos_dev.Api.dll

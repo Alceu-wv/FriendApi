@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ueSR4CxBqvRsOq/5gqASIBGl23VVqpL3lIJKsaI6qDrewjGmSFpl10lvqaiB1JmiJg6G0SovuIlVvelKBx4Vpw==",
+  "dgSpecHash": "764IxWll2f4k4NMbd37aeUn7cRvt4U9lGiRx/ux+1lDmGrBdswlODhdKXEI61wM1KEvbnvMrxXJWrc0BB6la4g==",
   "success": true,
-  "projectFilePath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Data.csproj",
+  "projectFilePath": "C:\\code\\dotnet\\amigos_dev\\amigos_dev.Data\\amigos_dev.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alceu\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alceu\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
